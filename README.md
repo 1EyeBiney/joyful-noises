@@ -1,6 +1,6 @@
 # A Series of Joyful Noises
 
-Accessible album site for two editions of thirteen Christian songs.
+Accessible album site for an original edition of thirteen songs and an acoustic edition with fourteen tracks, including a slide-guitar remix.
 
 ## Local preview
 
