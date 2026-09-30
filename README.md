@@ -1,6 +1,6 @@
 # A Series of Joyful Noises
 
-Accessible album site for an original edition of thirteen songs and an acoustic edition with fourteen tracks, including a slide-guitar remix.
+Accessible album site for an original edition and an acoustic edition of thirteen songs each. The acoustic edition opens with the Gentle Slide remix of “Before the Morning.”
 
 Listen at [asojn.com](https://asojn.com/).
 
