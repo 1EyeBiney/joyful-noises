@@ -33,3 +33,8 @@ body.reader-page{padding-bottom:0}.lyric-preview a{color:var(--link)}.lyric-prev
 .reader .track h2{font-size:1.55rem;line-height:1.25;margin:1.8rem 0 .6rem}
 .reader h1{font-size:clamp(2rem,4vw,3rem);line-height:1.12;margin:.3rem 0 1.5rem}
 .reader .lyric-stanza{margin:.55rem 0}
+
+:root:not([data-theme]) body.original-edition{--paper:#e9f0f8;--ink:#10233b;--muted:#334b66;--panel:#f8fbff;--edge:#a5bad3;--gold:#497ac4;--link:#164f9e;--dock:#102747;--dock-ink:#fff;--button:#c9e0ff;--button-ink:#102747}
+.original-edition .album-intro{background:linear-gradient(135deg,#112c50,#315990);color:#fff;max-width:none;padding-left:max(1.5rem,calc((100vw - 67rem)/2));padding-right:max(1.5rem,calc((100vw - 67rem)/2))}
+.original-edition .album-intro .eyebrow,.original-edition .album-intro a{color:#fff}
+.original-edition .listening-stage{margin-top:2rem}

@@ -5,6 +5,7 @@ Run from the repository root: python scripts/build_lyric_assets.py
 from pathlib import Path
 from bs4 import BeautifulSoup
 import json
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 CAPTIONS = ROOT / 'captions'
@@ -15,11 +16,11 @@ def timestamp(seconds):
     return f'{milliseconds // 3_600_000:02}:{milliseconds // 60_000 % 60:02}:{milliseconds // 1000 % 60:02}.{milliseconds % 1000:03}'
 
 
-def build(source):
+def build(source, edition='acoustic'):
     data = json.loads(source.read_text(encoding='utf-8'))
     recording = Path(data['recording'])
     number = int(recording.stem.split('-', 1)[0])
-    reader = ROOT / 'preview-songs' / f'{number:02}.html'
+    reader = ROOT / ('original-songs' if edition == 'original' else 'preview-songs') / f'{number:02}.html'
     vtt = source.with_suffix('.vtt')
     cues = data['cues']
     if not cues:
@@ -48,7 +49,7 @@ def build(source):
                 stanza.append(soup.new_tag('br'))
             stanza.append(line)
         box.append(stanza)
-    if number > 1 and not soup.select_one('.lyric-draft-note'):
+    if (edition == 'original' or number > 1) and not soup.select_one('.lyric-draft-note'):
         heading = next((h for h in soup.select('h2') if h.get_text(' ', strip=True) == 'Lyrics'), None)
         if heading is None:
             raise ValueError(f'{reader.name} is missing its Lyrics heading')
@@ -60,8 +61,11 @@ def build(source):
 
 
 def main():
-    sources = sorted(CAPTIONS.glob('*.json'))
-    built = [build(source) for source in sources]
+    edition = sys.argv[1] if len(sys.argv) > 1 else 'acoustic'
+    if edition not in ('acoustic', 'original'):
+        raise ValueError('Use acoustic or original')
+    sources = sorted((CAPTIONS / 'original').glob('*.json')) if edition == 'original' else sorted(CAPTIONS.glob('*.json'))
+    built = [build(source, edition) for source in sources]
     if len(built) != 13 or sorted(number for number, _ in built) != list(range(1, 14)):
         raise ValueError('Expected timed lyrics for all 13 tracks')
     print('Refreshed ' + ', '.join(f'{number:02}: {count} cues' for number, count in built))
