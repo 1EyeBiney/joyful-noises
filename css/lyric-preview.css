@@ -1,0 +1,34 @@
+:root{--paper:#f7f3ea;--ink:#182b38;--muted:#4b606b;--panel:#fffdf7;--edge:#c4b79f;--gold:#b67c24;--link:#075a78;--dock:#13243b;--dock-ink:#fff;--button:#f6d995;--button-ink:#172231}
+:root[data-theme=light]{--paper:#fff;--ink:#000;--muted:#222;--panel:#fff;--edge:#555;--link:#003c82;--dock:#fff;--dock-ink:#000;--button:#fff;--button-ink:#000}
+:root[data-theme=dark]{--paper:#121820;--ink:#f6f6f6;--muted:#d0d9df;--panel:#202a34;--edge:#8193a1;--link:#b2dfff;--dock:#121820;--dock-ink:#fff;--button:#334555;--button-ink:#fff}
+:root[data-theme=yellow]{--paper:#000;--ink:#ffff00;--muted:#ffff00;--panel:#000;--edge:#ffff00;--link:#fff;--dock:#000;--dock-ink:#ffff00;--button:#000;--button-ink:#ffff00}
+:root[data-theme=cream]{--paper:#f6edd3;--ink:#171717;--muted:#303030;--panel:#f6edd3;--edge:#756746;--link:#003c82;--dock:#f6edd3;--dock-ink:#171717;--button:#f6edd3;--button-ink:#171717}
+:root[data-size="125"]{font-size:125%}:root[data-size="150"]{font-size:150%}:root[data-size="175"]{font-size:175%}:root[data-size="200"]{font-size:200%}
+:root[data-spacing=wide] body{line-height:2;letter-spacing:.08em;word-spacing:.14em}
+body.lyric-preview{background:var(--paper);color:var(--ink);padding-bottom:var(--player-space,12rem)}
+body.reader-page{padding-bottom:0}.lyric-preview a{color:var(--link)}.lyric-preview .site-header,.lyric-preview footer{background:var(--dock);color:var(--dock-ink)}.lyric-preview .site-header a,.lyric-preview footer a{color:var(--dock-ink)}
+.lyric-preview button{background:var(--button);color:var(--button-ink);border-color:var(--edge)}
+.lyric-preview :focus-visible{outline:3px solid var(--link);outline-offset:4px}.lyric-preview .dock-player :focus-visible{outline-color:var(--dock-ink)}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.album-intro,.playlist,.after-album,.reader{max-width:70rem;margin:auto;padding:2rem 1.5rem}.album-intro{padding-top:2.4rem;padding-bottom:1.7rem}.album-intro h1{font-size:clamp(2.5rem,6vw,4rem);margin:.1em 0}.album-intro p{margin:.6rem 0}.eyebrow{color:var(--muted);font-size:.8rem}
+.listening-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);max-width:67rem;margin:0 auto 2rem;background:var(--panel);border:1px solid var(--edge);border-radius:.7rem;overflow:hidden}.listening-stage img{width:100%;height:100%;object-fit:cover;min-height:24rem}.stage-copy{padding:2rem 2.3rem;min-width:0}.stage-copy h2{font-size:clamp(1.6rem,3vw,2.4rem);margin:.4rem 0}.version{color:var(--muted);margin:.2rem 0 1.4rem}.lyric-window{min-height:8rem;border-top:1px solid var(--edge);padding-top:1rem;font:1.6rem/1.5 SourceSerif,Georgia,serif;overflow-wrap:anywhere}.lyric-window p{margin:0}.caption-note{font-size:.85rem;color:var(--muted)}
+.playlist{padding-top:0}.playlist-heading{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:2px solid var(--edge)}.playlist-heading h2{font-size:1.8rem;margin:.5rem 0}.playlist-heading p,.listening-note{color:var(--muted);font-size:.95rem}.song-list{list-style:none;margin:0;padding:0}.song-row{display:grid;grid-template-columns:2.4rem minmax(0,1fr) auto;gap:1.2rem;align-items:center;padding:1.4rem 0;border-bottom:1px solid var(--edge);scroll-margin-top:1rem}.song-number{align-self:start;padding-top:.1rem;font-size:1.2rem;color:var(--muted)}.song-copy{min-width:0}.song-copy h3{font:700 1.35rem/1.3 SourceSerif,Georgia,serif;margin:0}.song-copy p{margin:.45rem 0;font-size:.95rem;max-width:50rem}.song-links{display:flex;flex-wrap:wrap;gap:.35rem 1.2rem;font-size:.9rem}.playing-marker{font-weight:700}.song-row.is-playing{border-left:4px solid var(--gold);padding-left:.7rem}.song-row button{min-height:3rem;min-width:5.5rem}.after-album{padding-top:0}.display{border-top:1px solid var(--edge);padding-top:1rem}.display fieldset{border:1px solid var(--edge);margin:1rem 0}.display label{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem;margin-right:1rem}.display input{width:1.2rem;height:1.2rem;accent-color:var(--link)}
+.lyric-preview .dock-player{grid-template-columns:minmax(12rem,1fr) auto;background:var(--dock);color:var(--dock-ink);padding:.7rem 1.5rem;gap:.3rem 1.5rem;border-color:var(--edge)}.dock-player #now-playing{font-size:.95rem}.dock-player .player-buttons{justify-content:flex-end}.dock-player .seek-label{font-size:.8rem}.dock-player #seek{width:100%;min-width:0;accent-color:#f6d995;min-height:1.5rem}.dock-player #play-error{grid-column:1/-1}.reader{max-width:50rem}.reader article.track{padding:1rem 0;border:0}.reader h1{font-size:2.5rem;overflow-wrap:anywhere}.reader .lyrics{border-color:var(--edge)}
+@media(max-width:760px){.listening-stage{margin:0 1rem 1.5rem;grid-template-columns:1fr}.listening-stage img{height:10rem;min-height:0;object-position:center 47%}.stage-copy{padding:1.3rem}.lyric-window{font-size:1.4rem;min-height:7rem}.album-intro,.playlist,.after-album{padding-left:1rem;padding-right:1rem}.song-row{grid-template-columns:1.7rem minmax(0,1fr);gap:.6rem}.song-row button{grid-column:2;justify-self:start}.song-copy h3{font-size:1.25rem}.lyric-preview .dock-player{display:grid;grid-template-columns:1fr;padding:.6rem 1rem}.dock-player .player-buttons{justify-content:flex-start;gap:.35rem}.dock-player button{font-size:.85rem;min-height:2.6rem}.dock-player .seek-label{margin-top:.3rem}.site-header nav{font-size:.95rem}}
+@media(forced-colors:active){.song-row.is-playing{border-color:Highlight}.lyric-preview button{border:2px solid ButtonText}}
+@media print{.site-header,.dock-player,.display,footer,.song-links{display:none!important}body.lyric-preview{padding:0}.reader{max-width:none}}
+
+.lyric-preview.player-static{padding-bottom:0}
+.lyric-preview.player-static .dock-player{position:static;box-shadow:none}
+
+.story-details{border-top:1px solid var(--edge);padding-top:1rem}
+.story-details summary{font:700 1.3rem/1.4 SourceSerif,Georgia,serif}
+.story-body{max-width:52rem;padding:.5rem 0 1rem}
+
+:root[data-theme=contrast-dark]{--paper:#000;--ink:#fff;--muted:#fff;--panel:#000;--edge:#fff;--link:#ff0;--dock:#000;--dock-ink:#fff;--button:#000;--button-ink:#fff}
+:root[data-font=sans] body{font-family:Verdana,Tahoma,"Segoe UI",Arial,sans-serif}
+:root[data-font=sans] .lyric-window,:root[data-font=sans] .song-copy h3{font-family:Verdana,Tahoma,"Segoe UI",Arial,sans-serif}
+
+.reader .track h2{font-size:1.55rem;line-height:1.25;margin:1.8rem 0 .6rem}
+.reader h1{font-size:clamp(2rem,4vw,3rem);line-height:1.12;margin:.3rem 0 1.5rem}
+.reader .lyric-stanza{margin:.55rem 0}
