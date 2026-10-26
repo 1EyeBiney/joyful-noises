@@ -24,6 +24,7 @@ body.reader-page{padding-bottom:0}.lyric-preview a{color:var(--link)}.lyric-prev
 .story-details{border-top:1px solid var(--edge);padding-top:1rem}
 .story-details summary{font:700 1.3rem/1.4 SourceSerif,Georgia,serif}
 .story-body{max-width:52rem;padding:.5rem 0 1rem}
+.reader .lyric-stanza{margin:.55em 0;break-inside:avoid}
 
 :root[data-theme=contrast-dark]{--paper:#000;--ink:#fff;--muted:#fff;--panel:#000;--edge:#fff;--link:#ff0;--dock:#000;--dock-ink:#fff;--button:#000;--button-ink:#fff}
 :root[data-font=sans] body{font-family:Verdana,Tahoma,"Segoe UI",Arial,sans-serif}
